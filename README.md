@@ -6,9 +6,10 @@ It is necessary to download the dataset avaliable in this repository: [TimeSerie
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things packages and libraries you need to install
 
 ```
+#Work with Date and times
 install.packages('lubridate')
 library('lubridate')
 
