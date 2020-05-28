@@ -9,6 +9,10 @@ It is necessary to download the dataset avaliable in this repository: [TimeSerie
 What things packages and libraries you need to install
 
 ```
+#To import excel file
+install.packages("readxl")
+library(readxl)
+
 #Work with Date and times
 install.packages('lubridate')
 library('lubridate')
@@ -27,9 +31,14 @@ library('fpp2')
 
 ## Data analysis
 
-Explain how to run the automated tests for this system
+First analysis to visualise the main pattern of the time series.
 ```
-Give the example
+#Import the file to R including the correct path where you save the file
+TimeSeries_example <- read_excel("TimeSeries_example.xlsx")
+#saving as time series object
+dt_1 <- ts(TimeSeries_example[,2],start = decimal_date(as.Date("2015-04-01")), frequency = 365)
+#plot the first graph to visualise which kind of data we are working
+plot(dt_1, main="Number of patients per day", sub="01 April 2015 - 31 March 2019", col = 'Blue', xlab="Year", ylab="number of Patients")
 ```
 
 And repeat
