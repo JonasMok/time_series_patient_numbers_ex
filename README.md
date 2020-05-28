@@ -1,8 +1,8 @@
 # Explatory exercise using time series methods to predict the number of patients in a local walk-in health centre. 
-This repositoy register the main results found during a explatory exercise of forecasting using R. I applied time series methods to identify any pattern in the data of a local walk-in health centre. Then, I selected the best models to predict the number of patients. The original exercise was part of an assingment that I have done during my MSc course. 
+This repositoy register the main results obtained during a explatory exercise of forecasting using R. I applied time series methods to identify any pattern in the data of a local walk-in health centre. Then, I selected the best models to predict the number of patients. The original exercise was part of an assingment that I have done during my MSc course. 
 
 ## Getting Started
-It is necessary to download the dataset avaliable in this repository. This file is a fictional dataset built to practise time series methods. 
+It is necessary to download the dataset avaliable in this repository: [TimeSeries_example](TimeSeries_example). This file is a fictional dataset built to practise time series methods. 
 
 ### Prerequisites
 
