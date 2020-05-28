@@ -25,7 +25,7 @@ library('fpp2')
 
 ```
 
-## Running the tests
+## Data analysis
 
 Explain how to run the automated tests for this system
 ```
