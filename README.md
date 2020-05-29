@@ -2,7 +2,7 @@
 This repositoy register the main results obtained during a explatory exercise of forecasting using R. I applied time series methods to identify any pattern in the data of a local walk-in health centre. Then, I selected the best models to predict the number of patients. The original exercise was part of an assingment that I have done during my MSc course. 
 
 ## Getting Started
-It is necessary to download the dataset avaliable in this repository: [TimeSeries_example](TimeSeries_example.xlsx). This file is a fictional dataset built to practise time series methods. 
+It is necessary to download the dataset avaliable in this repository: [TimeSeries_example](TimeSeries_example.xlsx). This file is a fictional dataset built to practise time series methods. The period cover by dataset is from 01/04/15 to 31-03-19. 
 
 ### Prerequisites
 
@@ -60,7 +60,7 @@ sd(dt_1)
 min(dt_1)
 max(dt_1)
 ```
-The basics statistics of the data are:
+
 - Data Period: 01/04/15 – 31-03-19;
 - Number of Obervations (days): 1,461;
 - Mean: 46.72 / Mean abs. Dev.: 9.94 / Mean Sqd dev: 166.57 / Variance: 166.69 / St.dev: 12.91 / Mininum: 16 and Maximum: 97
