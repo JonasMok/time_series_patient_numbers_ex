@@ -33,7 +33,7 @@ library('fpp2')
 
 Is there any pattern in the daily number of patients at a local walk-in centre?  
 
-We can plot a graph to get the first impression and make some basic statistics.
+We can start plotting a graph and making some basic statistics to figure out which kind of dataset we are working.
 ```
 #Import the file to R including the correct path where you save the file
 TimeSeries_example <- read_excel("TimeSeries_example.xlsx")
@@ -46,6 +46,8 @@ plot(dt_1, main="Number of patients per day", sub="01 April 2015 - 31 March 2019
 
 ```
 ![Basic graph](basic_graph_v2.png)
+
+... and the basics statistics 
 
 ```
 stat.desc(dt_1)
