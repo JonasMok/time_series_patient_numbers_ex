@@ -32,7 +32,8 @@ library('fpp2')
 ## Data analysis
 
 Is there any pattern in the daily number of patients at a local walk-in centre?  
-We can plot a graph to get the first impression.
+
+We can plot a graph to get the first impression and make some basic statistics.
 ```
 #Import the file to R including the correct path where you save the file
 TimeSeries_example <- read_excel("TimeSeries_example.xlsx")
@@ -47,9 +48,20 @@ plot(dt_1, main="Number of patients per day", sub="01 April 2015 - 31 March 2019
 ![Basic graph](basic_graph_v2.png)
 
 ```
-until finished
+stat.desc(dt_1)
+mean(dt_1)
+median(dt_1)
+mean(abs(dt_1-mean(dt_1)))
+mean((dt_1-mean(dt_1))^2)
+var(dt_1)
+sd(dt_1)
+min(dt_1)
+max(dt_1)
 ```
-
+The basics statistics of the data are:
+- Data Period: 01/04/15 – 31-03-19;
+- Number of Obervations (days): 1,461;
+- Mean: 46.72 / Mean abs. Dev.: 9.94 / Mean Sqd dev: 166.57 / Variance: 166.69 / St.dev: 12.91 / Mininum: 16 and Maximum: 97
 
 ### Break down into end to end tests
 
