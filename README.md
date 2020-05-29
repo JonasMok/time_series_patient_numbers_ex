@@ -42,13 +42,8 @@ dt_1 <- ts(TimeSeries_example[,2],start = decimal_date(as.Date("2015-04-01")), f
 #plot the first graph to visualise which kind of data we are working
 plot(dt_1, main="Number of patients per day", sub="01 April 2015 - 31 March 2019", col = 'Blue', xlab="Year", ylab="number of Patients")
 
-![Basic graph](basic_graph_v2.png)
-
-
-
 ```
-
-And repeat
+![Basic graph](basic_graph_v2.png)
 
 ```
 until finished
