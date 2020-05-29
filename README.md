@@ -31,7 +31,8 @@ library('fpp2')
 
 ## Data analysis
 
-First analysis to visualise the main pattern of the time series.
+Is there any pattern in the daily number of patients at a local walk-in centre?  
+We can plot a graph to get the first impression.
 ```
 #Import the file to R including the correct path where you save the file
 TimeSeries_example <- read_excel("TimeSeries_example.xlsx")
