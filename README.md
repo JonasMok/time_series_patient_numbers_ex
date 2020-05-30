@@ -104,14 +104,30 @@ test <- subset(dt_1, start = 1024) #30% of the total dataset
 
 I did a investigation of a a selected time series models to see which model provides a good fit to the observed data.
 
-- Baseline & simple approaches, including: Naïve, Mean, Moving Average, Simple Linear Regression.
+- Baseline & simple approaches, including: Naïve, Moving Average, Simple Linear Regression.
 
 - A little more complex approaches including: SES, Holt Linear, Holt Winters, Multiple Linear Regression, ARIMAs.
 
 
 ```
-train<- subset(dt_1, end = 1023) #70% of the total dataset
-test <- subset(dt_1, start = 1024) #30% of the total dataset
+#Baseline models - seasonal Naive
+
+baseline_model <- snaive(train, h = (1461-1023))
+
+#Exponential models
+
+ses_model <- ses(train, h = (1461-1023))
+holt_model <- holt(train, h = (1461-1023))
+holt_w_model <-HoltWinters(train, season = 'mult')
+
+#regression models
+
+linear_model <- tslm(Pacients~Time,data=train)
+multi_model <- tslm(train~trend+season)
+
+#Arima
+
+
 
 ```
 
