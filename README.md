@@ -71,27 +71,49 @@ From the graph, it is possible to recognise a time series pattern in our dataset
 
 The purpose of decomposition methods is try to identify two sub components of the dataset: 
 
-*trend-cycle: The trend-cycle represents longer term changes in the series (trend and cyclical components) 
+- trend-cycle: The trend-cycle represents longer term changes in the series (trend and cyclical components) 
 
-*seasonal factor: it relates to a 'constant' fluctuations with periodic length. For instance, temperature along the year as a seasonal behaviour according with the month
+- seasonal factor: it relates to a 'constant' fluctuations with periodic length. For instance, temperature along the year as a seasonal behaviour according with the month
 
+```
+decomp_1 <- decompose(dt_1, type = 'additive')
+plot(decomp_1, col = 'blue')
+
+```
+![decomp_1](decomp_1.png)
+
+Data Visual Patterns:  
+
+Seasonality - more patients during weekends and winter months. 
+
+Positive Trend after mid-2017
+
+
+### Testing some time series models
+
+But before it, we need to divide our dataset into train (70%) and test sets (30%). This avoids problems such as overfitting and help us to better understand the accuracy of our predictions.
 
 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
+train<- subset(dt_1, end = 1023) #70% of the total dataset
+test <- subset(dt_1, start = 1024) #30% of the total dataset
 
 ```
-Give an example
+
+## Now the time series models
+
+I did a investigation of a a selected time series models to see which model provides a good fit to the observed data.
+
+- Baseline & simple approaches, including: Naïve, Mean, Moving Average, Simple Linear Regression.
+
+- A little more complex approaches including: SES, Holt Linear, Holt Winters, Multiple Linear Regression, ARIMAs.
+
+
 ```
+train<- subset(dt_1, end = 1023) #70% of the total dataset
+test <- subset(dt_1, start = 1024) #30% of the total dataset
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+```
 
 
 ## Authors
