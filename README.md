@@ -65,9 +65,17 @@ max(dt_1)
 - Number of Obervations (days): 1,461;
 - Mean: 46.72 / Mean abs. Dev.: 9.94 / Mean Sqd dev: 166.57 / Variance: 166.69 / St.dev: 12.91 / Mininum: 16 and Maximum: 97
 
-### Break down into end to end tests
+From the graph, it is possible to recognise a time series pattern in our dataset. So, let's decompose 
 
-Explain what these tests test and why
+### Decomposition
+
+The purpose of decomposition methods is try to identify two sub components of the dataset: 
+
+*trend-cycle: The trend-cycle represents longer term changes in the series (trend and cyclical components) 
+
+*seasonal factor: it relates to a 'constant' fluctuations with periodic length. For instance, temperature along the year as a seasonal behaviour according with the month
+
+
 
 ```
 Give an example
