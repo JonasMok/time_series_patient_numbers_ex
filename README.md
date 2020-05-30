@@ -1,12 +1,17 @@
-# Explatory exercise using time series methods to predict the number of patients in a local walk-in health centre. 
-This repositoy register the main results obtained during a explatory exercise of forecasting using R. I applied time series methods to identify any pattern in the data of a local walk-in health centre. Then, I selected the best models to predict the number of patients. The original exercise was part of an assingment that I have done during my MSc course. 
+## Explatory exercise using time series methods. 
+This repositoy register the main results obtained during a explatory exercise of forecasting using R. I applied some time series methods to identify any pattern in the data of a local walk-in health centre. Then, I predicted the number of patients using forecast methods. The original exercise was part of an assingment that I have done during my MSc course at Cardiff University. 
+
+It is important to destak that I am not trying to find which variables explain the dynamic of the series. In this exercise of time series and forecasting, I am just pay attention at the patterns of the serie in order to better forecast it. 
+
+If you are looking for a method to understand which factors/variables impact on your data, time series models is not suitable for this purpose  
 
 ## Getting Started
+
 It is necessary to download the dataset avaliable in this repository: [TimeSeries_example](TimeSeries_example.xlsx). This file is a fictional dataset built to practise time series methods. The period cover by dataset is from 01/04/15 to 31-03-19. 
 
-### Prerequisites
+## Prerequisites
 
-What things packages and libraries you need to install
+Which packages and libraries you need to install:
 
 ```
 #To import excel file
@@ -31,7 +36,7 @@ library('fpp2')
 
 ## Data analysis
 
-Is there any pattern in the daily number of patients at a local walk-in centre?  
+Is there any pattern in the daily number of patients at a local walk-in centre? 
 
 We can start plotting a graph and making some basic statistics to figure out which kind of dataset we are working.
 ```
@@ -67,13 +72,15 @@ max(dt_1)
 
 From the graph, it is possible to recognise a time series pattern in our dataset. So, let's decompose 
 
-### Decomposition
+# Decomposition
 
-The purpose of decomposition methods is try to identify two sub components of the dataset: 
+The purpose of decomposition methods is identify the sub components of the dataset: 
 
 - trend-cycle: The trend-cycle represents longer term changes in the series (trend and cyclical components) 
 
 - seasonal factor: it relates to a 'constant' fluctuations with periodic length. For instance, temperature along the year as a seasonal behaviour according with the month
+
+- random: containing anything else in the time series
 
 ```
 decomp_1 <- decompose(dt_1, type = 'additive')
@@ -82,16 +89,16 @@ plot(decomp_1, col = 'blue')
 ```
 ![decomp_1](decomp_1.png)
 
-Data Visual Patterns:  
+From the graph, we can note two main Visual Patterns:  
 
 Seasonality - more patients during weekends and winter months. 
 
 Positive Trend after mid-2017
 
 
-### Testing some time series models
+## Train and test set
 
-But before it, we need to divide our dataset into train (70%) and test sets (30%). This avoids problems such as overfitting and help us to better understand the accuracy of our predictions.
+Before apply the time series models, we need to divide our dataset into train (70%) and test sets (30%). This avoids future problems ir our results such as overfitting. Futhermore, it help us to get a better accuracy of our predictions points.
 
 
 ```
@@ -100,13 +107,19 @@ test <- subset(dt_1, start = 1024) #30% of the total dataset
 
 ```
 
-## Now the time series models
+## Time series models
 
 I did a investigation of a a selected time series models to see which model provides a good fit to the observed data.
 
-- Baseline & simple approaches, including: Naïve, Moving Average, Simple Linear Regression.
+- Baseline & simple approaches, including: Seasonal Naïve, Moving Average, Simple Linear Regression.
+
+  - Seasonal Naive: each forecast point will be equal to the last observed value from the same point of the previous year
+  - Moving average: it is a classic method applied to smooth and decompose the time series data. But it can be also applied to make forecast. 
+  - Simple linear regression: the classic linear regression applied to forecast. 
 
 - A little more complex approaches including: SES, Holt Linear, Holt Winters, Multiple Linear Regression, ARIMAs.
+
+  - SES: 
 
 
 ```
