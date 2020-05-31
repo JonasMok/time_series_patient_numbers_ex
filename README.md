@@ -77,8 +77,9 @@ max(dt_1)
 ```
 auto_correl <- ggAcf(dt_1)
 ggtsdisplay(dt_1)
-
 ```
+
+![Acf_Pacf](Acf_Pacf.png)
 
 From the graph, it is possible to recognise a time series pattern in our dataset. So, let's decompose 
 
