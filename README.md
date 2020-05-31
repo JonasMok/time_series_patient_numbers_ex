@@ -327,8 +327,10 @@ autoplot(train, series = 'Train')+
 
 ```
 ![forecast](forecast.png)
+
 ![Regression models](Regression models.png)
-![observed-exponetial](observed-exponetial.png)
+
+![forecast_expotential](forecast_expotential.png)
 
 ## Conclusion
 
