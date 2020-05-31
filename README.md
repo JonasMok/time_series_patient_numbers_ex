@@ -74,6 +74,10 @@ max(dt_1)
 - Mean: 46.72 / Mean abs. Dev.: 9.94 / Mean Sqd dev: 166.57 / Variance: 166.69 / St.dev: 12.91 / Mininum: 16 and Maximum: 97
 
 ## ACF and PACF
+
+Auto-correlation function (ACF): it describes how the current value of the series is related with its past values.
+
+Partial auto-correlation function (PACF): it finds correlation of the residuals after excluding the effects of earlier lag(s)
 ```
 auto_correl <- ggAcf(dt_1)
 ggtsdisplay(dt_1)
@@ -164,6 +168,8 @@ arima_fit <- auto.arima(train, lambda = -0.679727, seasonal = TRUE) #this lambda
 
 ## Error analysis
 
+It is important to understant the errors of our models to figure out the possible issues in our forecasting.
+
 ```
 checkresiduals(baseline_model)
 checkresiduals(ses_model)
@@ -227,10 +233,11 @@ error_fun_2(linear_model$fitted.values, train_2[,1])
 error_fun_2(multi_model$fitted.values,train)
 error_fun_2(predict_multi$mean,test)
 error_fun_2(fore_arima$mean,test)
-
 ```
+![errors](errors.png)
 
 ## Forecasting
+Finally, the forecasting exercise. 
 
 ```
 #forecast naive
@@ -319,6 +326,9 @@ autoplot(train, series = 'Train')+
   scale_color_manual(values=c("red",'green','blue', "black"))
 
 ```
+![forecast](forecast.png)
+![Regression models](Regression models.png)
+![observed-exponetial](observed-exponetial.png)
 
 ## Conclusion
 
